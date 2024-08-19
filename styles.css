@@ -1,0 +1,184 @@
+/* styles.css */
+
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    padding: 0;
+    background-color: #f0f0f0;
+    font-size: 16.5px;
+}
+
+.soma {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 350px;
+    padding: 10px;
+    /* background-color: #ffffffb4; */
+    /* border: 1px solid #ccc; */
+    /* border-radius: 5px; */
+}
+.totals {
+    position: fixed;
+    top: 20px;
+    right: 400px;
+    width: 350px;
+    padding: 10px;
+    /* background-color: #ffffffb4; */
+    /* border: 1px solid #ccc; */
+    /* border-radius: 5px; */
+}
+
+.content {
+    
+    margin-right: 760px; /* Espaço para a coluna fixa */
+}
+
+h1, h2 {
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.item-refeicao {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.item-total {
+    background-color: #FAFAFA;
+    border: 1px solid #EEE;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.nome-quantidade {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.macros {
+    font-size: 15px;
+}
+
+.macros div {
+    margin-bottom: 5px;
+}
+h2, h3 {
+    
+    margin-top: 4px; /* Define o espaçamento superior como 2 pixels */
+    margin-bottom: 7px; /* Define o espaçamento inferior como 2 pixels */
+} 
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+  }
+
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(14px);
+  }
+
+  .item-total.tabela {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .tabela-cabecalho {
+    text-align: center;
+  }
+  .tabela-cabecalho, .tabela-linha {
+    display: table-row;
+    
+  }
+  
+  .tabela-cabecalho div, .tabela-linha div {
+    display: table-cell;
+    padding: 8px;
+    border: 1px solid #ddd;
+  }
+  
+  .tabela-cabecalho div {
+    font-weight: bold;
+    background-color: #f4f4f4;
+  }
+  
+  .tabela-linha:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  .item-total.tabela-vitaminas {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .tabela-cabecalho, .tabela-linha {
+    display: table-row;
+   
+  }
+  
+  .tabela-cabecalho div, .tabela-linha div {
+    display: table-cell;
+    padding: 4px; /* Reduz o padding */
+    border: 1px solid #ddd;
+    font-size: 15px; /* Ajusta o tamanho da fonte */
+  }
+  
+  .tabela-cabecalho div {
+    font-weight: bold;
+    background-color: #f4f4f4;
+  }
+  
+  .tabela-linha:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  

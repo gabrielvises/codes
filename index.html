@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano Diário de Refeições</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="init.js" type="module" defer></script>
+ 
+</head>
+<body>
+    <div class="content">
+        <div style="display: flex; align-items: center;">
+            <h1 style="margin-right: 10px;">Plano Diário de Refeições</h1>
+            <label class="switch">
+              <input type="checkbox" id="toggleSwitch">
+              <span class="slider round"></span>
+            </label>
+          </div>
+
+        <h2>Pré Café da Manhã</h2>
+        <ul id="listaPreCafeDaManha"></ul>
+
+        <h2>Café da Manhã</h2>
+        <ul id="listaCafeDaManha"></ul>
+
+        <h2>Almoço</h2>
+        <ul id="listaAlmoco"></ul>
+
+        <h2>Lanche da Tarde</h2>
+        <ul id="listaLancheDaTarde"></ul>
+
+        <h2>Janta</h2>
+        <ul id="listaJanta"></ul>
+
+        <h2>Ceia</h2>
+        <ul id="listaCeia"></ul>
+        <!-- Mostrar total do dia -->
+        <div id="totalDia"></div>
+    </div>  
+    <div class="soma" id="totais-diarios">
+        <div id="total-totalDia"></div>
+    </div>
+    <div class="totals">
+        
+        <h3>Pré Café da Manhã</h3>
+        <div id="total-listaPreCafeDaManha" ></div>
+        <h3>Café da Manhã</h3>
+        <div id="total-listaCafeDaManha" ></div>
+        <h3>Almoço</h3>
+        <div id="total-listaAlmoco"></div>
+        <h3>Lanche da Tarde</h3>
+        <div id="total-listaLancheDaTarde"></div>
+        <h3>Janta</h3>
+        <div id="total-listaJanta"></div>
+        <h3>Ceia</h3>
+        <div id="total-listaCeia"></div>
+   
+    </div>
+</body>
+</html>
+
+
