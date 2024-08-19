@@ -27,6 +27,7 @@ export const mamaoFormosa = {
     gordura: 0
   }
 };
+ 
 
 export const kiwi = {
   nome: 'Kiwi',
