@@ -1,6 +1,6 @@
 import { refeicoes } from "./refeicoes.js";
-import  * as vitaminasEMinerais  from "./nutrientes.js";
 import  * as alimentosLista  from "./alimento.js";
+import  * as util  from "./util.js";
 
 
 var pesoAtual = 82;
@@ -36,7 +36,7 @@ const totalNutrientes = {
 
 const recomendado = {
   A: 900, //µg
-  B1: 1.2, //mg
+  B1: 1.2, //mg 
   B2: 1.3, //mg
   B3: 16, //mg
   B5: 5, //mg
@@ -66,50 +66,10 @@ const recomendado = {
   toggleSimple = this.checked;
   mostrarRefeicoes();
   
-});
-
-  // Função para calcular os valores reais com base nas referências
-  function calcularValoresReais(refeicoes) {
-    for (let refeicao in refeicoes) {
-      refeicoes[refeicao].forEach(alimento => {
-        alimento.valoresReais.calorias = (alimento.caloriasRef * alimento.quantidade) / 100;
-        alimento.valoresReais.proteina = (alimento.proteinaRef * alimento.quantidade) / 100;
-        alimento.valoresReais.carboidratos = (alimento.carboidratosRef * alimento.quantidade) / 100;
-        alimento.valoresReais.gordura = (alimento.gorduraRef * alimento.quantidade) / 100;
-        alimento.valoresReais.fibras = (alimento.fibrasRef * alimento.quantidade) / 100;
-      });
-    }
-  }
-
-  function atualizarQuantidadesNutrientes() {
-
-    // Função auxiliar para calcular valores reais
-  function calcularValorReal(alimento, nutriente, tipo) {
-    const valorRef = alimento[tipo][nutriente].ref;
-    return (valorRef * alimento.quantidade) / 100;
-  }
-    // Itera sobre cada refeição em 'refeicoes'
-    for (const refeicao in vitaminasEMinerais) {
-      vitaminasEMinerais[refeicao].quantidade = alimentosLista[refeicao].quantidade;
-
-        // Atualiza os valores reais para vitaminas e minerais com a nova quantidade
-        for (const vitamina in vitaminasEMinerais[refeicao].vitaminas) {
-          vitaminasEMinerais[refeicao].vitaminas[vitamina].real = calcularValorReal(vitaminasEMinerais[refeicao], vitamina, 'vitaminas');
-        }
-
-        for (const mineral in vitaminasEMinerais[refeicao].minerais) {
-          vitaminasEMinerais[refeicao].minerais[mineral].real = calcularValorReal(vitaminasEMinerais[refeicao], mineral, 'minerais');
-        }
-    }
-  
-  }
-
-
-
-  
+});  
   
   // Função para calcular os totais diários
-  function calcularTotais(refeicoes) {
+  function calcularTotalDoDia(refeicoes) {
     let totalCalorias = 0;
     let totalProteina = 0;
     let totalCarboidratos = 0;
@@ -118,11 +78,11 @@ const recomendado = {
   
     for (let refeicao in refeicoes) {
       refeicoes[refeicao].forEach(alimento => { 
-        totalCalorias += alimento.valoresReais.calorias;
-        totalProteina += alimento.valoresReais.proteina;
-        totalCarboidratos += alimento.valoresReais.carboidratos;
-        totalGordura += alimento.valoresReais.gordura;
-        totalFibras += alimento.valoresReais.fibras;
+        totalCalorias += alimento.macros.calorias.real;
+        totalProteina += alimento.macros.proteina.real;
+        totalCarboidratos += alimento.macros.carboidratos.real;
+        totalGordura += alimento.macros.gordura.real;
+        totalFibras += alimento.macros.fibras.real;
       });
     }
   
@@ -134,10 +94,8 @@ const recomendado = {
       totalFibras
     };
   }
+  
 
-  // const totais = somarVitaminasEMinerais(vitaminasEMinerais);
-// console.log(totais);
-// console.log(vitaminasEMinerais)
   
   // Função para calcular a distribuição de macronutrientes em porcentagem
   function calcularDistribuicaoMacros(totais) {
@@ -160,14 +118,40 @@ const recomendado = {
     };
   }
 
+  
+function calcularNutrientesTotais() {
+  for (let refeicao in refeicoes) {
+    refeicoes[refeicao].forEach(alimento => {
+      totalNutrientes.A += alimento.vitaminas.A.real;
+      totalNutrientes.B1 += alimento.vitaminas.B1.real;
+      totalNutrientes.B2 += alimento.vitaminas.B2.real;
+      totalNutrientes.B3 += alimento.vitaminas.B3.real;
+      totalNutrientes.B5 += alimento.vitaminas.B5.real;
+      totalNutrientes.B6 += alimento.vitaminas.B6.real;
+      totalNutrientes.B7 += alimento.vitaminas.B7.real;
+      totalNutrientes.B9 += alimento.vitaminas.B9.real;
+      totalNutrientes.B12 += alimento.vitaminas.B12.real;
+      totalNutrientes.C += alimento.vitaminas.C.real;
+      totalNutrientes.D += alimento.vitaminas.D.real;
+      totalNutrientes.E += alimento.vitaminas.E.real;
+      totalNutrientes.K += alimento.vitaminas.K.real;
+      
+      totalNutrientes.Cálcio += alimento.minerais.Cálcio.real;
+      totalNutrientes.Ferro += alimento.minerais.Ferro.real;
+      totalNutrientes.Magnésio += alimento.minerais.Magnésio.real;
+      totalNutrientes.Fósforo += alimento.minerais.Fósforo.real;
+      totalNutrientes.Potássio += alimento.minerais.Potássio.real;
+      totalNutrientes.Sódio += alimento.minerais.Sódio.real;
+      totalNutrientes.Zinco += alimento.minerais.Zinco.real;
+
+      
+    });
+    }
+  
+}
+
 // Função para mostrar as informações de todas as refeições no HTML
 function mostrarRefeicoes() {
-  calcularValoresReais(refeicoes)
-  atualizarQuantidadesNutrientes();
-  calcularNutrientesTotais();
-  mostrarTotaisDiarios();
- 
-
   mostrarRefeicao('preCafeDaManha', 'listaPreCafeDaManha');
   mostrarRefeicao('cafeDaManha', 'listaCafeDaManha');
   mostrarRefeicao('almoco', 'listaAlmoco');
@@ -177,33 +161,6 @@ function mostrarRefeicoes() {
 
 }
 
-function calcularNutrientesTotais() {
-  for (let refeicao in vitaminasEMinerais) {
-    var item = vitaminasEMinerais[refeicao];
-   
-      totalNutrientes.A += item.vitaminas.A.real;
-      totalNutrientes.B1 += item.vitaminas.B1.real;
-      totalNutrientes.B2 += item.vitaminas.B2.real;
-      totalNutrientes.B3 += item.vitaminas.B3.real;
-      totalNutrientes.B5 += item.vitaminas.B5.real;
-      totalNutrientes.B6 += item.vitaminas.B6.real;
-      totalNutrientes.B7 += item.vitaminas.B7.real;
-      totalNutrientes.B9 += item.vitaminas.B9.real;
-      totalNutrientes.B12 += item.vitaminas.B12.real;
-      totalNutrientes.C += item.vitaminas.C.real;
-      totalNutrientes.D += item.vitaminas.D.real;
-      totalNutrientes.E += item.vitaminas.E.real;
-      totalNutrientes.K += item.vitaminas.K.real;
-
-      totalNutrientes.Cálcio += item.minerais.Cálcio.real;
-      totalNutrientes.Ferro += item.minerais.Ferro.real;
-      totalNutrientes.Magnésio += item.minerais.Magnésio.real;
-      totalNutrientes.Fósforo += item.minerais.Fósforo.real;
-      totalNutrientes.Potássio += item.minerais.Potássio.real;
-      totalNutrientes.Sódio += item.minerais.Sódio.real;
-      totalNutrientes.Zinco += item.minerais.Zinco.real;
-  }
-}
 
 // Função para mostrar uma refeição específica no HTML
 function mostrarRefeicao(refeicao, idLista) {
@@ -227,11 +184,11 @@ function mostrarRefeicao(refeicao, idLista) {
   // Iterar sobre cada item da refeição
   listaRefeicao.forEach(item => {
       // Calcular totais da refeição
-      totalCalorias += item.valoresReais.calorias;
-      totalProteina += item.valoresReais.proteina;
-      totalCarboidratos += item.valoresReais.carboidratos;
-      totalGordura += item.valoresReais.gordura;
-      totalFibras += item.valoresReais.fibras;
+      totalCalorias += item.macros.calorias.real;
+      totalProteina += item.macros.proteina.real;
+      totalCarboidratos += item.macros.carboidratos.real;
+      totalGordura += item.macros.gordura.real;
+      totalFibras += item.macros.fibras.real;
 
       // Criar um elemento de lista para cada item
       const listItem = document.createElement('li');
@@ -251,10 +208,10 @@ function mostrarRefeicao(refeicao, idLista) {
               <strong>${item.nome}</strong> - ${item.quantidade}g
           </div>
           <div class="macros">
-              <div>Calorias: ${item.valoresReais.calorias.toFixed(2)} kcal</div>
-              <div>Proteína: ${item.valoresReais.proteina.toFixed(2)}g</div>
-              <div>Carboidratos: ${item.valoresReais.carboidratos.toFixed(2)}g</div>
-              <div>Gordura: ${item.valoresReais.gordura.toFixed(2)}g</div>
+              <div>Calorias: ${item.macros.calorias.real.toFixed(2)} kcal</div>
+              <div>Proteína: ${item.macros.proteina.real.toFixed(2)}g</div>
+              <div>Carboidratos: ${item.macros.carboidratos.real.toFixed(2)}g</div>
+              <div>Gordura: ${item.macros.gordura.real.toFixed(2)}g</div>
           `;
         }
       
@@ -286,7 +243,7 @@ function mostrarTotaisDiarios() {
   const totalDiaElemento = document.getElementById('total-totalDia');
 
   // Calcular totais diários
-  const totais = calcularTotais(refeicoes);
+  const totais = calcularTotalDoDia(refeicoes);
 
   // Calcular distribuição de macronutrientes em porcentagem
   const distribuicaoMacros = calcularDistribuicaoMacros(totais);
@@ -294,6 +251,7 @@ function mostrarTotaisDiarios() {
   // Calcular macros por kg
   const macrosPorKg = calcularMacrosPorKg(totais, pesoAtual); // Aqui você pode substituir 85 pelo peso do usuário
 
+  calcularNutrientesTotais();
   totalkcal = {
     totalCalorias: totais.totalCalorias,
     totalProteina: totais.totalProteina,
@@ -303,7 +261,27 @@ function mostrarTotaisDiarios() {
   };
 
 
-  
+
+  var listaA = util.listaAlimentosRanking(refeicoes, "A", "vitaminas");
+  var listaB1 = util.listaAlimentosRanking(refeicoes, "B1", "vitaminas");
+  var listaB2 = util.listaAlimentosRanking(refeicoes, "B2", "vitaminas");
+  var listaB3 = util.listaAlimentosRanking(refeicoes, "B3", "vitaminas");
+  var listaB5 = util.listaAlimentosRanking(refeicoes, "B5", "vitaminas");
+  var listaB6 = util.listaAlimentosRanking(refeicoes, "B6", "vitaminas");
+  var listaB7 = util.listaAlimentosRanking(refeicoes, "B7", "vitaminas");
+  var listaB9 = util.listaAlimentosRanking(refeicoes, "B9", "vitaminas");
+  var listaB12 = util.listaAlimentosRanking(refeicoes, "B12", "vitaminas");
+  var listaC = util.listaAlimentosRanking(refeicoes, "C", "vitaminas");
+  var listaD = util.listaAlimentosRanking(refeicoes, "D", "vitaminas");
+  var listaE = util.listaAlimentosRanking(refeicoes, "E", "vitaminas");
+  var listaK = util.listaAlimentosRanking(refeicoes, "K", "vitaminas");
+  var listaCálcio = util.listaAlimentosRanking(refeicoes, "Cálcio", "minerais");
+  var listaFerro = util.listaAlimentosRanking(refeicoes, "Ferro", "minerais");
+  var listaMagnésio = util.listaAlimentosRanking(refeicoes, "Magnésio", "minerais");
+  var listaFósforo = util.listaAlimentosRanking(refeicoes, "Fósforo", "minerais");
+  var listaPotássio = util.listaAlimentosRanking(refeicoes, "Potássio", "minerais");
+  var listaSódio = util.listaAlimentosRanking(refeicoes, "Sódio", "minerais");
+  var listaZinco = util.listaAlimentosRanking(refeicoes, "Zinco", "minerais");
 
   // Mostrar totais do dia
   totalDiaElemento.innerHTML = `
@@ -339,106 +317,187 @@ function mostrarTotaisDiarios() {
     <div>Nome</div>
     <div>Quantidade</div>
     <div>Total diário</div>
+    <div>%</div>
   </div>
   <div class="tabela-linha">
     <div>A</div>
-    <div>${totalNutrientes.A.toFixed(1)} µg</div>
+    <div class="tooltip-container">
+      <span class="quantity">${totalNutrientes.A.toFixed(1)} µg</span>
+      <span class="tooltip-text"><ul>${listaA}</ul></span>
+    </div>
     <div>${recomendado.A} µg</div>
+    <div>${(totalNutrientes.A*100/recomendado.A).toFixed()}%</div>
   </div>
   <div class="tabela-linha">
     <div>B1</div>
-    <div>${totalNutrientes.B1.toFixed(1)} mg</div>
+       <div class="tooltip-container">
+      <span class="quantity">${totalNutrientes.B1.toFixed(1)} mg</span>
+      <span class="tooltip-text"><ul>${listaB1}</ul></span>
+    </div>
     <div>${recomendado.B1} mg</div>
+    <div>${(totalNutrientes.B1*100/recomendado.B1).toFixed()}%</div>
   </div>
   <div class="tabela-linha">
     <div>B2</div>
-    <div>${totalNutrientes.B2.toFixed(1)} mg</div>
+       <div class="tooltip-container">
+      <span class="quantity">${totalNutrientes.B2.toFixed(1)} mg</span>
+      <span class="tooltip-text"><ul>${listaB2}</ul></span>
+    </div>
     <div>${recomendado.B2} mg</div>
+    <div>${(totalNutrientes.B2*100/recomendado.B2).toFixed()}%</div>
   </div>
   <div class="tabela-linha">
     <div>B3</div>
-    <div>${totalNutrientes.B3.toFixed(1)} mg</div>
+       <div class="tooltip-container">
+      <span class="quantity">${totalNutrientes.B3.toFixed(1)} mg</span>
+      <span class="tooltip-text"><ul>${listaB3}</ul></span>
+    </div>
     <div>${recomendado.B3} mg</div>
+    <div>${(totalNutrientes.B3*100/recomendado.B3).toFixed()}%</div>
   </div>
   <div class="tabela-linha">
     <div>B5</div>
-    <div>${totalNutrientes.B5.toFixed(1)} mg</div>
+       <div class="tooltip-container">
+      <span class="quantity">${totalNutrientes.B5.toFixed(1)} mg</span>
+      <span class="tooltip-text"><ul>${listaB5}</ul></span>
+    </div>
     <div>${recomendado.B5} mg</div>
+    <div>${(totalNutrientes.B5*100/recomendado.B5).toFixed()}%</div>
   </div>
   <div class="tabela-linha">
     <div>B6</div>
-    <div>${totalNutrientes.B6.toFixed(1)} mg</div>
+       <div class="tooltip-container">
+      <span class="quantity">${totalNutrientes.B6.toFixed(1)} mg</span>
+      <span class="tooltip-text"><ul>${listaB6}</ul></span>
+    </div>
     <div>${recomendado.B6} mg</div>
+    <div>${(totalNutrientes.B6*100/recomendado.B6).toFixed()}%</div>
   </div>
   <div class="tabela-linha">
     <div>B7</div>
-    <div>${totalNutrientes.B7.toFixed(1)} µg</div>
+       <div class="tooltip-container">
+      <span class="quantity">${totalNutrientes.B7.toFixed(1)} µg</span>
+      <span class="tooltip-text"><ul>${listaB7}</ul></span>
+    </div>
     <div>${recomendado.B7} µg</div>
+    <div>${(totalNutrientes.B7*100/recomendado.B7).toFixed()}%</div>
   </div>
   <div class="tabela-linha">
     <div>B9</div>
-    <div>${totalNutrientes.B9.toFixed(1)} µg</div>
+       <div class="tooltip-container">
+      <span class="quantity">${totalNutrientes.B9.toFixed(1)} µg</span>
+      <span class="tooltip-text"><ul>${listaB9}</ul></span>
+    </div>
     <div>${recomendado.B9} µg</div>
+    <div>${(totalNutrientes.B9*100/recomendado.B9).toFixed()}%</div>
   </div>
   <div class="tabela-linha">
     <div>B12</div>
-    <div>${totalNutrientes.B12.toFixed(1)} µg</div>
+       <div class="tooltip-container">
+      <span class="quantity">${totalNutrientes.B12.toFixed(1)} µg</span>
+      <span class="tooltip-text"><ul>${listaB12}</ul></span>
+    </div>
     <div>${recomendado.B12} µg</div>
+    <div>${(totalNutrientes.B12*100/recomendado.B12).toFixed()}%</div>
   </div>
   <div class="tabela-linha">
     <div>C</div>
-    <div>${totalNutrientes.C.toFixed(1)} mg</div>
+       <div class="tooltip-container">
+      <span class="quantity">${totalNutrientes.C.toFixed(1)} mg</span>
+      <span class="tooltip-text"><ul>${listaC}</ul></span>
+    </div>
     <div>${recomendado.C} mg</div>
+    <div>${(totalNutrientes.C*100/recomendado.C).toFixed()}%</div>
   </div>
   <div class="tabela-linha">
     <div>D</div>
-    <div>${totalNutrientes.D.toFixed(1)} UI</div>
+       <div class="tooltip-container">
+      <span class="quantity">${totalNutrientes.D.toFixed(1)} UI</span>
+      <span class="tooltip-text"><ul>${listaD}</ul></span>
+    </div>
     <div>${recomendado.D} UI</div>
+    <div>${(totalNutrientes.D*100/recomendado.D).toFixed()}%</div>
   </div>
   <div class="tabela-linha">
     <div>E</div>
-    <div>${totalNutrientes.E.toFixed(1)} mg</div>
+       <div class="tooltip-container">
+      <span class="quantity">${totalNutrientes.E.toFixed(1)} mg</span>
+      <span class="tooltip-text"><ul>${listaE}</ul></span>
+    </div>
     <div>${recomendado.E} mg</div>
+    <div>${(totalNutrientes.E*100/recomendado.E).toFixed()}%</div>
   </div>
   <div class="tabela-linha">
     <div>K</div>
-    <div>${totalNutrientes.K.toFixed(1)} µg</div>
+       <div class="tooltip-container">
+      <span class="quantity">${totalNutrientes.K.toFixed(1)} µg</span>
+      <span class="tooltip-text"><ul>${listaK}</ul></span>
+    </div>
     <div>${recomendado.K} µg</div>
+    <div>${(totalNutrientes.K*100/recomendado.K).toFixed()}%</div>
   </div>
    <div class="tabela-linha">
     <div>Cálcio</div>
-    <div>${totalNutrientes.Cálcio.toFixed(1)} mg</div>
-    <div>${recomendado.Cálcio} mg</div>
+       <div class="tooltip-container">
+      <span class="quantity">${totalNutrientes.Cálcio.toFixed(1)} mg</span>
+      <span class="tooltip-text"><ul>${listaCálcio}</ul></span>
+    </div>
+    <div>${recomendado.Cálcio} mg </div>
+    <div>${(totalNutrientes.Cálcio*100/recomendado.Cálcio).toFixed()}%</div>
   </div>
   <div class="tabela-linha">
     <div>Ferro</div>
-    <div>${totalNutrientes.Ferro.toFixed(1)} mg</div>
+       <div class="tooltip-container">
+      <span class="quantity">${totalNutrientes.Ferro.toFixed(1)} mg</span>
+      <span class="tooltip-text"><ul>${listaFerro}</ul></span>
+    </div>
     <div>${recomendado.Ferro} mg</div>
+    <div>${(totalNutrientes.Ferro*100/recomendado.Ferro).toFixed()}%</div>
   </div>
   <div class="tabela-linha">
     <div>Magnésio</div>
-    <div>${totalNutrientes.Magnésio.toFixed(1)} mg</div>
+       <div class="tooltip-container">
+      <span class="quantity">${totalNutrientes.Magnésio.toFixed(1)} mg</span>
+      <span class="tooltip-text"><ul>${listaMagnésio}</ul></span>
+    </div>
     <div>${recomendado.Magnésio} mg</div>
+    <div>${(totalNutrientes.Magnésio*100/recomendado.Magnésio).toFixed()}%</div>
   </div>
   <div class="tabela-linha">
     <div>Fósforo</div>
-    <div>${totalNutrientes.Fósforo.toFixed(1)} mg</div>
+       <div class="tooltip-container">
+      <span class="quantity">${totalNutrientes.Fósforo.toFixed(1)} mg</span>
+      <span class="tooltip-text"><ul>${listaFósforo}</ul></span>
+    </div>
     <div>${recomendado.Fósforo} mg</div>
+    <div>${(totalNutrientes.Fósforo*100/recomendado.Fósforo).toFixed()}%</div>
   </div>
   <div class="tabela-linha">
     <div>Potássio</div>
-    <div>${totalNutrientes.Potássio.toFixed(1)} mg</div>
+       <div class="tooltip-container">
+      <span class="quantity">${totalNutrientes.Potássio.toFixed(1)} mg</span>
+      <span class="tooltip-text"><ul>${listaPotássio}</ul></span>
+    </div>
     <div>${recomendado.Potássio} mg</div>
+    <div>${(totalNutrientes.Potássio*100/recomendado.Potássio).toFixed()}%</div>
   </div>
   <div class="tabela-linha">
     <div>Sódio</div>
-    <div>${totalNutrientes.Sódio.toFixed(1)} mg</div>
+       <div class="tooltip-container">
+      <span class="quantity">${totalNutrientes.Sódio.toFixed(1)} mg</span>
+      <span class="tooltip-text"><ul>${listaSódio}</ul></span>
+    </div>
     <div>${recomendado.Sódio} mg</div>
+    <div>${(totalNutrientes.Sódio*100/recomendado.Sódio).toFixed()}%</div>
   </div>
   <div class="tabela-linha">
     <div>Zinco</div>
-    <div>${totalNutrientes.Zinco.toFixed(1)} mg</div>
+       <div class="tooltip-container">
+      <span class="quantity">${totalNutrientes.Zinco.toFixed(1)} mg</span>
+      <span class="tooltip-text"><ul>${listaZinco}</ul></span>
+    </div>
     <div>${recomendado.Zinco} mg</div>
+    <div>${(totalNutrientes.Zinco*100/recomendado.Zinco).toFixed()}%</div>
   </div>
 </div>
 
@@ -450,9 +509,11 @@ function mostrarTotaisDiarios() {
 
 // Mostrar todas as refeições ao carregar a página
 document.addEventListener('DOMContentLoaded', () => {
+  util.calcularmacrosENutrientes(refeicoes)
+  mostrarTotaisDiarios();
   mostrarRefeicoes();
 });
 
-// console.log(refeicoes)
+console.log(refeicoes)
 
 

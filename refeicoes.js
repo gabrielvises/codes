@@ -5,35 +5,35 @@ import  * as util from "./util.js";
 
 export const refeicoes = {
     preCafeDaManha: [
-      hub.alimento.maca,
-      hub.alimento.mamaoFormosa,
-      hub.alimento.kiwi,
-      hub.alimento.melao,
-      hub.alimento.pera,
+      util.alimento(hub.alimento.maca,100),
+      util.alimento(hub.alimento.mamaoFormosa,100),
+      util.alimento(hub.alimento.kiwi,50),
+      util.alimento(hub.alimento.melao,100),
+      util.alimento(hub.alimento.pera,50),
 
     ],
     cafeDaManha: [
-      hub.alimento.ovos,
-      hub.alimento.azeiteDeOlive,
-      hub.alimento.aveia,
-      hub.alimento.brócolis,
-      hub.alimento.pao
+      util.alimento(hub.alimento.ovos, 100),
+      util.alimento(hub.alimento.azeiteDeOlive, 5),
+      util.alimento(hub.alimento.aveia, 30),
+      util.alimento(hub.alimento.brócolis, 30),
+      util.alimento(hub.alimento.pao,30),
     ],
     almoco: [
       ...marmita.marmita
     ],
     lancheDaTarde: [
-     hub.alimento.leite,
-     hub.alimento.whey,
-     hub.alimento.banana,
-     util.alimento(hub.alimento.morango,50),
+     util.alimento(hub.alimento.leite, 300),
+     util.alimento(hub.alimento.whey, 30),
+     util.alimento(hub.alimento.banana, 110),
+     util.alimento(hub.alimento.morango, 50),
     ],
     jantar: [
       ...marmita.marmita
      ],
     ceia: [
-      hub.alimento.abacate,
-      hub.alimento.amendoas,
+      util.alimento(hub.alimento.abacate, 100),
+      util.alimento(hub.alimento.amendoas, 15),
     ]
   };
 

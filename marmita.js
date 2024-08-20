@@ -4,10 +4,10 @@ import * as hub from './hub.js'
   
 var pure = util.calcularMacrosReceita( "Purê de Batata Doce", receita.ingredientespuredebatatadoce);
 var strogonoffDeFrango = util.calcularMacrosReceita( "Strogonoff de Frango", receita.ingredientesstrogonoffdefrango);
-var strogonoffDeCarne = util.calcularMacrosReceita( "Strogonoff de Carne", receita.ingredientesstrogonoffdecarne);
+
+// var strogonoffDeCarne = util.calcularMacrosReceita( "Strogonoff de Carne", receita.ingredientesstrogonoffdecarne);
 
 export const proteina = [
-    hub.alimento.frangoSassami,
     // util.alimento(strogonoff, 180),
     util.alimento(strogonoffDeFrango, 190),
 ];
@@ -17,7 +17,7 @@ export const batatadoce = [
 ];
 
 export const marmita = [
-    proteina[1],
+    proteina[0],
     batatadoce[1],
     hub.alimento.arrozIntegral,
     util.alimento(hub.alimento.brócolis,25),

@@ -1,437 +1,922 @@
 export const maca = {
   nome: 'Maçã',
   quantidade: 100,
-  caloriasRef: 56,
-  proteinaRef: 0.3,
-  carboidratosRef: 14.0,
-  gorduraRef: 0.2,
-  fibrasRef: 2.4,
-  valoresReais: {
-    calorias: 0,
-    proteina: 0,
-    carboidratos: 0,
-    gordura: 0,
-    fibras: 0,
+  macros: {
+    calorias: {ref: 56, real: 0},
+    proteina: {ref: 0.3, real: 0},
+    carboidratos: {ref: 14.0, real: 0},
+    gordura: {ref: 0.2, real: 0},
+    fibras: {ref: 2.4, real: 0},
+  },
+  vitaminas: {
+    A: { ref: 54, real: 0 },
+    B1: { ref: 0.02, real: 0 },
+    B2: { ref: 0.03, real: 0 },
+    B3: { ref: 0.1, real: 0 },
+    B5: { ref: 0.1, real: 0 },
+    B6: { ref: 0.1, real: 0 },
+    B7: { ref: 0.0, real: 0 },
+    B9: { ref: 3.00, real: 0 },
+    B12: { ref: 0.00, real: 0 },
+    C: { ref: 4.6, real: 0 },
+    D: { ref: 0.0, real: 0 },
+    E: { ref: 0.18, real: 0 },
+    K: { ref: 2.0, real: 0 }
+  },
+  minerais: {
+    Cálcio: { ref: 6, real: 0 },
+    Ferro: { ref: 0.12, real: 0 },
+    Magnésio: { ref: 5, real: 0 },
+    Fósforo: { ref: 11, real: 0 },
+    Potássio: { ref: 107, real: 0 },
+    Sódio: { ref: 2, real: 0 },
+    Zinco: { ref: 0.04, real: 0 }
   }
+  
 };
 
 export const mamaoFormosa = {
   nome: 'Mamão Formosa',
   quantidade: 100,
-  caloriasRef: 43,
-  proteinaRef: 0.5,
-  carboidratosRef: 10.8,
-  gorduraRef: 0.3,
-  fibrasRef: 1.7,
-  valoresReais: {
-    calorias: 0,
-    proteina: 0,
-    carboidratos: 0,
-    gordura: 0,
-    fibras: 0,
+  macros: {
+    calorias: {ref: 43, real: 0},
+    proteina: {ref: 0.5, real: 0},
+    carboidratos: {ref: 10.8, real: 0},
+    gordura: {ref: 0.3, real: 0},
+    fibras: {ref: 1.7, real: 0},
+  },
+  vitaminas: {
+    A: { ref: 82, real: 0 },
+    B1: { ref: 0.05, real: 0 },
+    B2: { ref: 0.02, real: 0 },
+    B3: { ref: 0.6, real: 0 },
+    B5: { ref: 0.3, real: 0 },
+    B6: { ref: 0.1, real: 0 },
+    B7: { ref: 0.0, real: 0 },
+    B9: { ref: 38, real: 0 },
+    B12: { ref: 0.00, real: 0 },
+    C: { ref: 62, real: 0 },
+    D: { ref: 0.0, real: 0 },
+    E: { ref: 0.30, real: 0 },
+    K: { ref: 2.0, real: 0 }
+  },
+  minerais: {
+    Cálcio: { ref: 34, real: 0 },
+    Ferro: { ref: 0.2, real: 0 },
+    Magnésio: { ref: 21, real: 0 },
+    Fósforo: { ref: 34, real: 0 },
+    Potássio: { ref: 182, real: 0 },
+    Sódio: { ref: 1, real: 0 },
+    Zinco: { ref: 0.1, real: 0 }
   }
+  
 };
 
 export const kiwi = {
   nome: 'Kiwi',
   quantidade: 50,
-  caloriasRef: 61,
-  proteinaRef: 1.1,
-  carboidratosRef: 14.7,
-  gorduraRef: 0.5,
-  fibrasRef: 3.0,
-  valoresReais: {
-    calorias: 0,
-    proteina: 0,
-    carboidratos: 0,
-    gordura: 0,
-    fibras: 0,
+  macros: {
+    calorias: {ref: 61, real: 0},
+    proteina: {ref: 1.1, real: 0},
+    carboidratos: {ref: 14.7, real: 0},
+    gordura: {ref: 0.5, real: 0},
+    fibras: {ref: 3.0, real: 0},
+  },
+  vitaminas: {
+    A: { ref: 0, real: 0 },
+    B1: { ref: 0.02, real: 0 },
+    B2: { ref: 0.03, real: 0 },
+    B3: { ref: 0.35, real: 0 },
+    B5: { ref: 0.30, real: 0 },
+    B6: { ref: 0.07, real: 0 },
+    B7: { ref: 0.0, real: 0 },
+    B9: { ref: 25.00, real: 0 },
+    B12: { ref: 0.00, real: 0 },
+    C: { ref: 93, real: 0 },
+    D: { ref: 0.0, real: 0 },
+    E: { ref: 1.46, real: 0 },
+    K: { ref: 40.0, real: 0 }
+  },
+  minerais: {
+    Cálcio: { ref: 34, real: 0 },
+    Ferro: { ref: 0.31, real: 0 },
+    Magnésio: { ref: 17, real: 0 },
+    Fósforo: { ref: 34, real: 0 },
+    Potássio: { ref: 312, real: 0 },
+    Sódio: { ref: 3, real: 0 },
+    Zinco: { ref: 0.14, real: 0 }
   }
+  
 };
 export const melao = {
   nome: 'Melão',
   quantidade: 100,
-  caloriasRef: 34,
-  proteinaRef: 0.8,
-  carboidratosRef: 8.6,
-  gorduraRef: 0.2,
-  fibrasRef: 0.8,
-  valoresReais: {
-    calorias: 0,
-    proteina: 0,
-    carboidratos: 0,
-    gordura: 0,
-    fibras: 0,
+  macros: {
+    calorias: {ref: 34, real: 0},
+    proteina: {ref: 0.8, real: 0},
+    carboidratos: {ref: 8.6, real: 0},
+    gordura: {ref: 0.2, real: 0},
+    fibras: {ref: 0.8, real: 0},
+  },
+  vitaminas: {
+    A: { ref: 338, real: 0 },
+    B1: { ref: 0.04, real: 0 },
+    B2: { ref: 0.03, real: 0 },
+    B3: { ref: 0.2, real: 0 },
+    B5: { ref: 0.2, real: 0 },
+    B6: { ref: 0.1, real: 0 },
+    B7: { ref: 0.0, real: 0 },
+    B9: { ref: 17, real: 0 },
+    B12: { ref: 0.00, real: 0 },
+    C: { ref: 36.7, real: 0 },
+    D: { ref: 0.0, real: 0 },
+    E: { ref: 0.1, real: 0 },
+    K: { ref: 2.4, real: 0 }
+  },
+  minerais: {
+    Cálcio: { ref: 9, real: 0 },
+    Ferro: { ref: 0.3, real: 0 },
+    Magnésio: { ref: 12, real: 0 },
+    Fósforo: { ref: 15, real: 0 },
+    Potássio: { ref: 267, real: 0 },
+    Sódio: { ref: 1, real: 0 },
+    Zinco: { ref: 0.1, real: 0 }
   }
+  
 };
 
 export const pera = {
   nome: 'Pera',
   quantidade: 50,
-  caloriasRef: 39,
-  proteinaRef: 0.4,
-  carboidratosRef: 10.2,
-  gorduraRef: 0.1,
-  fibrasRef: 3.1,
-  valoresReais: {
-    calorias: 0,
-    proteina: 0,
-    carboidratos: 0,
-    gordura: 0,
-    fibras: 0,
+  macros: {
+    calorias: {ref: 39, real: 0},
+    proteina: {ref: 0.4, real: 0},
+    carboidratos: {ref: 10.2, real: 0},
+    gordura: {ref: 0.1, real: 0},
+    fibras: {ref: 3.1, real: 0},
+  },
+  vitaminas: {
+    A: { ref: 1, real: 0 },
+    B1: { ref: 0.02, real: 0 },
+    B2: { ref: 0.03, real: 0 },
+    B3: { ref: 0.16, real: 0 },
+    B5: { ref: 0.03, real: 0 },
+    B6: { ref: 0.03, real: 0 },
+    B7: { ref: 0.0, real: 0 },
+    B9: { ref: 7.00, real: 0 },
+    B12: { ref: 0.00, real: 0 },
+    C: { ref: 4.3, real: 0 },
+    D: { ref: 0.0, real: 0 },
+    E: { ref: 0.12, real: 0 },
+    K: { ref: 2.5, real: 0 }
+  },
+  minerais: {
+    Cálcio: { ref: 9, real: 0 },
+    Ferro: { ref: 0.2, real: 0 },
+    Magnésio: { ref: 7, real: 0 },
+    Fósforo: { ref: 11, real: 0 },
+    Potássio: { ref: 116, real: 0 },
+    Sódio: { ref: 2, real: 0 },
+    Zinco: { ref: 0.1, real: 0 }
   }
+  
 };
 
 export const ovos = {
     nome: 'Ovos',
     quantidade: 100,
-    caloriasRef: 143,
-    proteinaRef: 12.6,
-    carboidratosRef: 0.7,
-    gorduraRef: 9.5,
-    fibrasRef: 0,
-    valoresReais: {
-      calorias: 0,
-      proteina: 0,
-      carboidratos: 0,
-      gordura: 0,
-      fibras: 0,
-    }
+    macros: {
+      calorias: {ref: 143, real: 0},
+      proteina: {ref: 12.6, real: 0},
+      carboidratos: {ref: 0.7, real: 0},
+      gordura: {ref: 9.5, real: 0},
+      fibras: {ref: 0, real: 0},
+    },
+    vitaminas: {
+    A: { ref: 540, real: 0 },
+    B1: { ref: 0.2, real: 0 },
+    B2: { ref: 0.5, real: 0 },
+    B3: { ref: 0.7, real: 0 },
+    B5: { ref: 1.4, real: 0 },
+    B6: { ref: 0.1, real: 0 },
+    B7: { ref: 10, real: 0 },
+    B9: { ref: 47, real: 0 },
+    B12: { ref: 1.3, real: 0 },
+    C: { ref: 0, real: 0 },
+    D: { ref: 37, real: 0 },
+    E: { ref: 1.0, real: 0 },
+    K: { ref: 0.0, real: 0 }
+  },
+  minerais: {
+    Cálcio: { ref: 50, real: 0 },
+    Ferro: { ref: 1.2, real: 0 },
+    Magnésio: { ref: 12, real: 0 },
+    Fósforo: { ref: 200, real: 0 },
+    Potássio: { ref: 126, real: 0 },
+    Sódio: { ref: 70, real: 0 },
+    Zinco: { ref: 1.3, real: 0 }
+  }
+    
   };
 
   export const azeiteDeOlive = {
     nome: 'Azeite de Oliva',
     quantidade: 5,
-    caloriasRef: 900,
-    proteinaRef: 0,
-    carboidratosRef: 0,
-    gorduraRef: 100,
-    fibrasRef: 0,
-    valoresReais: {
-      calorias: 0,
-      proteina: 0,
-      carboidratos: 0,
-      gordura: 0,
-      fibras: 0,
-    }
+    macros: {
+      calorias: {ref: 900, real: 0},
+      proteina: {ref: 0, real: 0},
+      carboidratos: {ref: 0, real: 0},
+      gordura: {ref: 100, real: 0},
+      fibras: {ref: 0, real: 0},
+    },
+    vitaminas: {
+    A: { ref: 0, real: 0 },
+    B1: { ref: 0, real: 0 },
+    B2: { ref: 0, real: 0 },
+    B3: { ref: 0, real: 0 },
+    B5: { ref: 0, real: 0 },
+    B6: { ref: 0, real: 0 },
+    B7: { ref: 0, real: 0 },
+    B9: { ref: 0, real: 0 },
+    B12: { ref: 0, real: 0 },
+    C: { ref: 0, real: 0 },
+    D: { ref: 0, real: 0 },
+    E: { ref: 14, real: 0 },
+    K: { ref: 60, real: 0 }
+  },
+  minerais: {
+    Cálcio: { ref: 0, real: 0 },
+    Ferro: { ref: 0.56, real: 0 },
+    Magnésio: { ref: 0, real: 0 },
+    Fósforo: { ref: 0, real: 0 },
+    Potássio: { ref: 0, real: 0 },
+    Sódio: { ref: 0, real: 0 },
+    Zinco: { ref: 0, real: 0 }
+  }
+    
   };
   export const aveia = {
     nome: 'Aveia',
     quantidade: 30,
-    caloriasRef: 367,
-    proteinaRef: 15.333,
-    carboidratosRef: 53.333,
-    gorduraRef: 7.666,
-    fibrasRef: 10.6,
-    valoresReais: {
-      calorias: 0,
-      proteina: 0,
-      carboidratos: 0,
-      gordura: 0,
-      fibras: 0,
-    }
+    macros: {
+      calorias: {ref: 367, real: 0},
+      proteina: {ref: 15.333, real: 0},
+      carboidratos: {ref: 53.333, real: 0},
+      gordura: {ref: 7.666, real: 0},
+      fibras: {ref: 10.6, real: 0},
+    },
+    vitaminas: {
+    A: { ref: 0, real: 0 },
+    B1: { ref: 0.76, real: 0 },
+    B2: { ref: 0.14, real: 0 },
+    B3: { ref: 0.96, real: 0 },
+    B5: { ref: 0.73, real: 0 },
+    B6: { ref: 0.11, real: 0 },
+    B7: { ref: 0, real: 0 },
+    B9: { ref: 32, real: 0 },
+    B12: { ref: 0, real: 0 },
+    C: { ref: 0, real: 0 },
+    D: { ref: 0, real: 0 },
+    E: { ref: 0.54, real: 0 },
+    K: { ref: 2.0, real: 0 }
+  },
+  minerais: {
+    Cálcio: { ref: 54, real: 0 },
+    Ferro: { ref: 4.6, real: 0 },
+    Magnésio: { ref: 138, real: 0 },
+    Fósforo: { ref: 340, real: 0 },
+    Potássio: { ref: 329, real: 0 },
+    Sódio: { ref: 2, real: 0 },
+    Zinco: { ref: 2.7, real: 0 }
+  }
+    
   };
   export const brócolis = {
     nome: 'Brócolis',
     quantidade: 30,
-    caloriasRef: 30,
-    proteinaRef: 2.5,
-    carboidratosRef: 5.9,
-    gorduraRef: 0,
-    fibrasRef: 3.4,
-    valoresReais: {
-      calorias: 0,
-      proteina: 0,
-      carboidratos: 0,
-      gordura: 0,
-      fibras: 0,
-    }
+    macros: {
+      calorias: {ref: 30, real: 0},
+      proteina: {ref: 2.5, real: 0},
+      carboidratos: {ref: 5.9, real: 0},
+      gordura: {ref: 0, real: 0},
+      fibras: {ref: 3.4, real: 0},
+    },
+    vitaminas: {
+    A: { ref: 700, real: 0 },
+    B1: { ref: 0.1, real: 0 },
+    B2: { ref: 0.1, real: 0 },
+    B3: { ref: 0.6, real: 0 },
+    B5: { ref: 0.5, real: 0 },
+    B6: { ref: 0.1, real: 0 },
+    B7: { ref: 0, real: 0 },
+    B9: { ref: 63, real: 0 },
+    B12: { ref: 0, real: 0 },
+    C: { ref: 89, real: 0 },
+    D: { ref: 0, real: 0 },
+    E: { ref: 1.0, real: 0 },
+    K: { ref: 101, real: 0 }
+  },
+  minerais: {
+    Cálcio: { ref: 47, real: 0 },
+    Ferro: { ref: 1.0, real: 0 },
+    Magnésio: { ref: 21, real: 0 },
+    Fósforo: { ref: 66, real: 0 },
+    Potássio: { ref: 316, real: 0 },
+    Sódio: { ref: 33, real: 0 },
+    Zinco: { ref: 0.4, real: 0 }
+  }
+    
   };
   export const pao = {
     nome: 'Pão Castanha-do-Pará & Quinoa',
     quantidade: 30,
-    caloriasRef: 254,
-    proteinaRef: 11.6,
-    carboidratosRef: 40,
-    gorduraRef: 5.6,
-    fibrasRef: 6.8,
-    valoresReais: {
-      calorias: 0,
-      proteina: 0,
-      carboidratos: 0,
-      gordura: 0,
-      fibras: 0,
-    }
+    macros: {
+      calorias: {ref: 254, real: 0},
+      proteina: {ref: 11.6, real: 0},
+      carboidratos: {ref: 40, real: 0},
+      gordura: {ref: 5.6, real: 0},
+      fibras: {ref: 6.8, real: 0},
+    },
+    vitaminas: {
+    A: { ref: 0, real: 0 },
+    B1: { ref: 0.1, real: 0 },
+    B2: { ref: 0.1, real: 0 },
+    B3: { ref: 1.0, real: 0 },
+    B5: { ref: 0.5, real: 0 },
+    B6: { ref: 0.1, real: 0 },
+    B7: { ref: 0, real: 0 },
+    B9: { ref: 20, real: 0 },
+    B12: { ref: 0, real: 0 },
+    C: { ref: 0, real: 0 },
+    D: { ref: 0, real: 0 },
+    E: { ref: 0.5, real: 0 },
+    K: { ref: 0, real: 0 }
+  },
+  minerais: {
+    Cálcio: { ref: 30, real: 0 },
+    Ferro: { ref: 1.5, real: 0 },
+    Magnésio: { ref: 50, real: 0 },
+    Fósforo: { ref: 100, real: 0 },
+    Potássio: { ref: 150, real: 0 },
+    Sódio: { ref: 200, real: 0 },
+    Zinco: { ref: 0.8, real: 0 }
+  }
+    
   }
 
-  export const frangoSassami = {
-    nome: 'Frango Sassami',
-    quantidade: 100,
-    caloriasRef: 100,
-    proteinaRef: 18.1,
-    carboidratosRef: 0,
-    gorduraRef: 2.7,
-    fibrasRef: 0,
-    valoresReais: {
-      calorias: 0,
-      proteina: 0,
-      carboidratos: 0,
-      gordura: 0,
-      fibras: 0,
-    }
-  };
+
 
   export const peitoDeFrango = {
     nome: 'Peito de frango',
     quantidade: 100,
-    caloriasRef: 104,
-    proteinaRef: 23,
-    carboidratosRef: 0,
-    gorduraRef: 1,
-    fibrasRef: 0,
-  valoresReais: {
-    calorias: 0,
-    proteina: 0,
-    carboidratos: 0,
-    gordura: 0,
-    fibras: 0,
+  macros: {
+    calorias: {ref: 104, real: 0},
+    proteina: {ref: 23, real: 0},
+    carboidratos: {ref: 0, real: 0},
+    gordura: {ref: 1, real: 0},
+    fibras: {ref: 0, real: 0},
+  },
+  vitaminas: {
+    A: { ref: 0, real: 0 },
+    B1: { ref: 0.07, real: 0 },
+    B2: { ref: 0.12, real: 0 },
+    B3: { ref: 13.2, real: 0 },
+    B5: { ref: 1.2, real: 0 },
+    B6: { ref: 0.6, real: 0 },
+    B7: { ref: 0, real: 0 },
+    B9: { ref: 6, real: 0 },
+    B12: { ref: 0.3, real: 0 },
+    C: { ref: 0, real: 0 },
+    D: { ref: 0, real: 0 },
+    E: { ref: 0.3, real: 0 },
+    K: { ref: 0, real: 0 }
+  },
+  minerais: {
+    Cálcio: { ref: 11, real: 0 },
+    Ferro: { ref: 0.9, real: 0 },
+    Magnésio: { ref: 29, real: 0 },
+    Fósforo: { ref: 230, real: 0 },
+    Potássio: { ref: 256, real: 0 },
+    Sódio: { ref: 70, real: 0 },
+    Zinco: { ref: 1.0, real: 0 }
   }
+  
 };
 
 export const carnePatinho = {
   nome: 'Carne de Patinho',
   quantidade: 100,
-  caloriasRef: 133,
-  proteinaRef: 22,
-  carboidratosRef: 0,
-  gorduraRef: 4.5,
-  fibrasRef: 0,
-  valoresReais: {
-    calorias: 0,
-    proteina: 0,
-    carboidratos: 0,
-    gordura: 0,
-    fibras: 0,
+  macros: {
+    calorias: {ref: 133, real: 0},
+    proteina: {ref: 22, real: 0},
+    carboidratos: {ref: 0, real: 0},
+    gordura: {ref: 4.5, real: 0},
+    fibras: {ref: 0, real: 0},
+  },
+  vitaminas: {
+    A: { ref: 11, real: 0 },
+    B1: { ref: 0.05, real: 0 },
+    B2: { ref: 0.23, real: 0 },
+    B3: { ref: 6.20, real: 0 },
+    B5: { ref: 0.92, real: 0 },
+    B6: { ref: 0.50, real: 0 },
+    B7: { ref: 4.0, real: 0 },
+    B9: { ref: 7.00, real: 0 },
+    B12: { ref: 2.20, real: 0 },
+    C: { ref: 0.0, real: 0 },
+    D: { ref: 0.0, real: 0 },
+    E: { ref: 0.12, real: 0 },
+    K: { ref: 0.0, real: 0 }
+  },
+  minerais: {
+    Cálcio: { ref: 6, real: 0 },
+    Ferro: { ref: 2.60, real: 0 },
+    Magnésio: { ref: 22, real: 0 },
+    Fósforo: { ref: 250, real: 0 },
+    Potássio: { ref: 330, real: 0 },
+    Sódio: { ref: 60, real: 0 },
+    Zinco: { ref: 4.0, real: 0 }
   }
+  
 };
   
 
 export const batataDoce = {
     nome: 'Batata Doce cozida',
     quantidade: 80,
-    caloriasRef: 86,
-    proteinaRef: 1.6,
-    carboidratosRef: 20,
-    gorduraRef: 0.1,
-    fibrasRef: 2.2,
-    valoresReais: {
-      calorias: 0,
-      proteina: 0,
-      carboidratos: 0,
-      gordura: 0,
-      fibras: 0,
-    }
+    macros: {
+      calorias: {ref: 86, real: 0},
+      proteina: {ref: 1.6, real: 0},
+      carboidratos: {ref: 20, real: 0},
+      gordura: {ref: 0.1, real: 0},
+      fibras: {ref: 2.2, real: 0},
+    },
+    vitaminas: {
+    A: { ref: 709, real: 0 },
+    B1: { ref: 0.09, real: 0 },
+    B2: { ref: 0.03, real: 0 },
+    B3: { ref: 1.47, real: 0 },
+    B5: { ref: 0.80, real: 0 },
+    B6: { ref: 0.21, real: 0 },
+    B7: { ref: 0, real: 0 },
+    B9: { ref: 22, real: 0 },
+    B12: { ref: 0, real: 0 },
+    C: { ref: 2.4, real: 0 },
+    D: { ref: 0, real: 0 },
+    E: { ref: 0.2, real: 0 },
+    K: { ref: 0, real: 0 }
+  },
+  minerais: {
+    Cálcio: { ref: 30, real: 0 },
+    Ferro: { ref: 0.6, real: 0 },
+    Magnésio: { ref: 25, real: 0 },
+    Fósforo: { ref: 34, real: 0 },
+    Potássio: { ref: 475, real: 0 },
+    Sódio: { ref: 55, real: 0 },
+    Zinco: { ref: 0.3, real: 0 }
+  }
+    
   };
   
   export const arrozIntegral = {
     nome: 'Arroz Integral',
     quantidade: 60,
-    caloriasRef: 126,
-    proteinaRef: 2.6,
-    carboidratosRef: 26.5,
-    gorduraRef: 1.0,
-    fibrasRef: 2.7,
-    valoresReais: {
-      calorias: 0,
-      proteina: 0,
-      carboidratos: 0,
-      gordura: 0,
-      fibras: 0,
-    }
+    macros: {
+      calorias: {ref: 126, real: 0},
+      proteina: {ref: 2.6, real: 0},
+      carboidratos: {ref: 26.5, real: 0},
+      gordura: {ref: 1.0, real: 0},
+      fibras: {ref: 2.7, real: 0},
+    },
+    vitaminas: {
+    A: { ref: 0, real: 0 },
+    B1: { ref: 0.12, real: 0 },
+    B2: { ref: 0.05, real: 0 },
+    B3: { ref: 1.20, real: 0 },
+    B5: { ref: 0.60, real: 0 },
+    B6: { ref: 0.12, real: 0 },
+    B7: { ref: 0, real: 0 },
+    B9: { ref: 9, real: 0 },
+    B12: { ref: 0, real: 0 },
+    C: { ref: 0, real: 0 },
+    D: { ref: 0, real: 0 },
+    E: { ref: 0.16, real: 0 },
+    K: { ref: 0, real: 0 }
+  },
+  minerais: {
+    Cálcio: { ref: 10, real: 0 },
+    Ferro: { ref: 0.45, real: 0 },
+    Magnésio: { ref: 43, real: 0 },
+    Fósforo: { ref: 77, real: 0 },
+    Potássio: { ref: 77, real: 0 },
+    Sódio: { ref: 1, real: 0 },
+    Zinco: { ref: 0.68, real: 0 }
+  }
+    
   };
 
   export const feijaoPreto = {
     nome: 'Feijão Preto',
     quantidade: 120,
-    caloriasRef: 143,
-    proteinaRef: 11.8,
-    carboidratosRef: 25.3,
-    gorduraRef: 0.5,
-    fibrasRef: 8.4,
-    valoresReais: {
-      calorias: 0,
-      proteina: 0,
-      carboidratos: 0,
-      gordura: 0,
-      fibras: 0,
-    }
+    macros: {
+      calorias: {ref: 143, real: 0},
+      proteina: {ref: 11.8, real: 0},
+      carboidratos: {ref: 25.3, real: 0},
+      gordura: {ref: 0.5, real: 0},
+      fibras: {ref: 8.4, real: 0},
+    },
+    vitaminas: {
+    A: { ref: 0, real: 0 },
+    B1: { ref: 0.3, real: 0 },
+    B2: { ref: 0.2, real: 0 },
+    B3: { ref: 0.6, real: 0 },
+    B5: { ref: 0.2, real: 0 },
+    B6: { ref: 0.2, real: 0 },
+    B7: { ref: 0, real: 0 },
+    B9: { ref: 140, real: 0 },
+    B12: { ref: 0, real: 0 },
+    C: { ref: 0, real: 0 },
+    D: { ref: 0, real: 0 },
+    E: { ref: 0.6, real: 0 },
+    K: { ref: 0, real: 0 }
+  },
+  minerais: {
+    Cálcio: { ref: 60, real: 0 },
+    Ferro: { ref: 2.1, real: 0 },
+    Magnésio: { ref: 60, real: 0 },
+    Fósforo: { ref: 100, real: 0 },
+    Potássio: { ref: 350, real: 0 },
+    Sódio: { ref: 2, real: 0 },
+    Zinco: { ref: 1.0, real: 0 }
+  }
+    
   };
 
   export const leite = {
     nome: 'Leite Desnatado',
-    quantidade: 200,
-    caloriasRef: 32,
-    proteinaRef: 3.1,
-    carboidratosRef: 4.7,
-    gorduraRef: 0,
-    fibrasRef: 0,
-    valoresReais: {
-      calorias: 0,
-      proteina: 0,
-      carboidratos: 0,
-      gordura: 0,
-      fibras: 0,
-    }
+    quantidade: 300,
+    macros: {
+      calorias: {ref: 32, real: 0},
+      proteina: {ref: 3.1, real: 0},
+      carboidratos: {ref: 4.7, real: 0},
+      gordura: {ref: 0, real: 0},
+      fibras: {ref: 0, real: 0},
+    },
+    vitaminas: {
+    A: { ref: 50, real: 0 },
+    B1: { ref: 0.05, real: 0 },
+    B2: { ref: 0.14, real: 0 },
+    B3: { ref: 0.1, real: 0 },
+    B5: { ref: 0.4, real: 0 },
+    B6: { ref: 0.1, real: 0 },
+    B7: { ref: 0.4, real: 0 },
+    B9: { ref: 5, real: 0 },
+    B12: { ref: 0.4, real: 0 },
+    C: { ref: 1, real: 0 },
+    D: { ref: 1.5, real: 0 },
+    E: { ref: 0.1, real: 0 },
+    K: { ref: 0.0, real: 0 }
+  },
+  minerais: {
+    Cálcio: { ref: 120, real: 0 },
+    Ferro: { ref: 0.1, real: 0 },
+    Magnésio: { ref: 12, real: 0 },
+    Fósforo: { ref: 90, real: 0 },
+    Potássio: { ref: 150, real: 0 },
+    Sódio: { ref: 50, real: 0 },
+    Zinco: { ref: 0.4, real: 0 }
+  }
+    
   };
   
   export const whey = {
     nome: 'Whey',
     quantidade: 50,
-    caloriasRef: 407,
-    proteinaRef: 76.6,
-    carboidratosRef: 13.3,
-    gorduraRef: 5.3,
-    fibrasRef: 0,
-    valoresReais: {
-      calorias: 0,
-      proteina: 0,
-      carboidratos: 0,
-      gordura: 0,
-      fibras: 0,
-    }
+    macros: {
+      calorias: {ref: 407, real: 0},
+      proteina: {ref: 76.6, real: 0},
+      carboidratos: {ref: 13.3, real: 0},
+      gordura: {ref: 5.3, real: 0},
+      fibras: {ref: 0, real: 0},
+    },
+    vitaminas: {
+    A: { ref: 0, real: 0 },
+    B1: { ref: 0.1, real: 0 },
+    B2: { ref: 0.2, real: 0 },
+    B3: { ref: 0.6, real: 0 },
+    B5: { ref: 0.5, real: 0 },
+    B6: { ref: 0.2, real: 0 },
+    B7: { ref: 0, real: 0 },
+    B9: { ref: 0, real: 0 },
+    B12: { ref: 0, real: 0 },
+    C: { ref: 0, real: 0 },
+    D: { ref: 0, real: 0 },
+    E: { ref: 0, real: 0 },
+    K: { ref: 0, real: 0 }
+  },
+  minerais: {
+    Cálcio: { ref: 300, real: 0 },
+    Ferro: { ref: 1.0, real: 0 },
+    Magnésio: { ref: 50, real: 0 },
+    Fósforo: { ref: 250, real: 0 },
+    Potássio: { ref: 400, real: 0 },
+    Sódio: { ref: 150, real: 0 },
+    Zinco: { ref: 1.0, real: 0 }
+  }
+    
   };
   
   export const banana = {
     nome: 'Banana',
     quantidade: 100,
-    caloriasRef: 92,
-    proteinaRef: 1.4,
-    carboidratosRef: 23.9,
-    gorduraRef: 0,
-    fibrasRef: 1.9,
-    valoresReais: {
-      calorias: 0,
-      proteina: 0,
-      carboidratos: 0,
-      gordura: 0,
-      fibras: 0,
-    }
+    macros: {
+      calorias: {ref: 92, real: 0},
+      proteina: {ref: 1.4, real: 0},
+      carboidratos: {ref: 23.9, real: 0},
+      gordura: {ref: 0, real: 0},
+      fibras: {ref: 1.9, real: 0},
+    },
+    vitaminas: {
+    A: { ref: 64, real: 0 },
+    B1: { ref: 0.09, real: 0 },
+    B2: { ref: 0.08, real: 0 },
+    B3: { ref: 0.70, real: 0 },
+    B5: { ref: 0.30, real: 0 },
+    B6: { ref: 0.37, real: 0 },
+    B7: { ref: 0.0, real: 0 },
+    B9: { ref: 20.00, real: 0 },
+    B12: { ref: 0.00, real: 0 },
+    C: { ref: 8.7, real: 0 },
+    D: { ref: 0.0, real: 0 },
+    E: { ref: 0.10, real: 0 },
+    K: { ref: 0.5, real: 0 }
+  },
+  minerais: {
+    Cálcio: { ref: 5, real: 0 },
+    Ferro: { ref: 0.26, real: 0 },
+    Magnésio: { ref: 27, real: 0 },
+    Fósforo: { ref: 34, real: 0 },
+    Potássio: { ref: 358, real: 0 },
+    Sódio: { ref: 1, real: 0 },
+    Zinco: { ref: 0.15, real: 0 }
+  }
+    
   };
   export const morango = {
     nome: 'Morango',
     quantidade: 100,
-    caloriasRef: 32,
-    proteinaRef: 0.7,
-    carboidratosRef: 7.7,
-    gorduraRef: 0.3,
-    fibrasRef: 1.7,
-    valoresReais: {
-      calorias: 0,
-      proteina: 0,
-      carboidratos: 0,
-      gordura: 0,
-      fibras: 0,
-    }
+    macros: {
+      calorias: {ref: 32, real: 0},
+      proteina: {ref: 0.7, real: 0},
+      carboidratos: {ref: 7.7, real: 0},
+      gordura: {ref: 0.3, real: 0},
+      fibras: {ref: 1.7, real: 0},
+    },
+    vitaminas: {
+    A: { ref: 2, real: 0 },
+    B1: { ref: 0.02, real: 0 },
+    B2: { ref: 0.02, real: 0 },
+    B3: { ref: 0.10, real: 0 },
+    B5: { ref: 0.17, real: 0 },
+    B6: { ref: 0.05, real: 0 },
+    B7: { ref: 0.0, real: 0 },
+    B9: { ref: 17.00, real: 0 },
+    B12: { ref: 0.00, real: 0 },
+    C: { ref: 58.8, real: 0 },
+    D: { ref: 0.0, real: 0 },
+    E: { ref: 0.30, real: 0 },
+    K: { ref: 2.0, real: 0 }
+  },
+  minerais: {
+    Cálcio: { ref: 2, real: 0 },
+    Ferro: { ref: 0.41, real: 0 },
+    Magnésio: { ref: 13, real: 0 },
+    Fósforo: { ref: 24, real: 0 },
+    Potássio: { ref: 153, real: 0 },
+    Sódio: { ref: 1, real: 0 },
+    Zinco: { ref: 0.14, real: 0 }
+  }
+    
   };
   export const psyllium = {
     nome: 'Psyllium',
     quantidade: 5,
-    caloriasRef: 35,
-    proteinaRef: 1.5,
-    carboidratosRef: 78,
-    gorduraRef: 0.6,
-    fibrasRef: 80.0,
-    valoresReais: {
-      calorias: 0,
-      proteina: 0,
-      carboidratos: 0,
-      gordura: 0,
-      fibras: 0,
-    }
+    macros: {
+      calorias: {ref: 35, real: 0},
+      proteina: {ref: 1.5, real: 0},
+      carboidratos: {ref: 78, real: 0},
+      gordura: {ref: 0.6, real: 0},
+      fibras: {ref: 80.0, real: 0},
+    },
+    vitaminas: {
+    A: { ref: 146, real: 0 },
+    B1: { ref: 0.07, real: 0 },
+    B2: { ref: 0.13, real: 0 },
+    B3: { ref: 1.74, real: 0 },
+    B5: { ref: 1.40, real: 0 },
+    B6: { ref: 0.29, real: 0 },
+    B7: { ref: 3.0, real: 0 },
+    B9: { ref: 81.00, real: 0 },
+    B12: { ref: 0.00, real: 0 },
+    C: { ref: 10.0, real: 0 },
+    D: { ref: 0.0, real: 0 },
+    E: { ref: 2.07, real: 0 },
+    K: { ref: 21.0, real: 0 }
+  },
+  minerais: {
+    Cálcio: { ref: 12, real: 0 },
+    Ferro: { ref: 0.55, real: 0 },
+    Magnésio: { ref: 29, real: 0 },
+    Fósforo: { ref: 52, real: 0 },
+    Potássio: { ref: 485, real: 0 },
+    Sódio: { ref: 7, real: 0 },
+    Zinco: { ref: 0.64, real: 0 }
+  }
+    
   };
 
   export const abacate = {
     nome: "Abacate",
     quantidade: 100,
-    caloriasRef: 161,
-    proteinaRef: 2,
-    carboidratosRef: 9,
-    gorduraRef: 15.3,
-    fibrasRef: 6.3,
-    valoresReais: {
-      calorias: 0,
-      proteina: 0,
-      carboidratos: 0,
-      gordura: 0,
-      fibras: 0,
-    }
+    macros: {
+      calorias: {ref: 161, real: 0},
+      proteina: {ref: 2, real: 0},
+      carboidratos: {ref: 9, real: 0},
+      gordura: {ref: 15.3, real: 0},
+      fibras: {ref: 6.3, real: 0},
+    },
+    vitaminas: {
+    A: { ref: 146, real: 0 },
+    B1: { ref: 0.07, real: 0 },
+    B2: { ref: 0.013, real: 0 },
+    B3: { ref: 1.7, real: 0 },
+    B5: { ref: 1.4, real: 0 },
+    B6: { ref: 0.3, real: 0 },
+    B7: { ref: 2, real: 0 },
+    B9: { ref: 81, real: 0 },
+    B12: { ref: 0, real: 0 },
+    C: { ref: 10, real: 0 },
+    D: { ref: 0.0, real: 0 },
+    E: { ref: 2.07, real: 0 },
+    K: { ref: 21, real: 0 }
+  },
+  minerais: {
+    Cálcio: { ref: 12, real: 0 },
+    Ferro: { ref: 0.6, real: 0 },
+    Magnésio: { ref: 29, real: 0 },
+    Fósforo: { ref: 52, real: 0 },
+    Potássio: { ref: 485, real: 0 },
+    Sódio: { ref: 7, real: 0 },
+    Zinco: { ref: 0.64, real: 0 }
+  }
+    
   };
 
   export const amendoas = {
     nome: "Amêndoas",
     quantidade: 15,
-    caloriasRef: 587,
-    proteinaRef: 26,
-    carboidratosRef: 16,
-    gorduraRef: 49.3,
-    fibrasRef: 11.6,
-    valoresReais: {
-      calorias: 0,
-      proteina: 0,
-      carboidratos: 0,
-      gordura: 0,
-      fibras: 0,
-    }
+    macros: {
+      calorias: {ref: 587, real: 0},
+      proteina: {ref: 26, real: 0},
+      carboidratos: {ref: 16, real: 0},
+      gordura: {ref: 49.3, real: 0},
+      fibras: {ref: 11.6, real: 0},
+    },
+    vitaminas: {
+    A: { ref: 0, real: 0 },
+    B1: { ref: 0.21, real: 0 },
+    B2: { ref: 1.14, real: 0 },
+    B3: { ref: 0.40, real: 0 },
+    B5: { ref: 0.47, real: 0 },
+    B6: { ref: 0.10, real: 0 },
+    B7: { ref: 0.0, real: 0 },
+    B9: { ref: 60.00, real: 0 },
+    B12: { ref: 0.00, real: 0 },
+    C: { ref: 0.0, real: 0 },
+    D: { ref: 0.0, real: 0 },
+    E: { ref: 25.63, real: 0 },
+    K: { ref: 0.0, real: 0 }
+  },
+  minerais: {
+    Cálcio: { ref: 269, real: 0 },
+    Ferro: { ref: 3.71, real: 0 },
+    Magnésio: { ref: 268, real: 0 },
+    Fósforo: { ref: 490, real: 0 },
+    Potássio: { ref: 705, real: 0 },
+    Sódio: { ref: 1, real: 0 },
+    Zinco: { ref: 3.1, real: 0 }
+  }
+    
   };
   export const polpaDeTomate = {
     nome: 'Molho de Tomate Hemmer',
   quantidade: 300, // quantidade em gramas
-  caloriasRef: 60,
-  proteinaRef: 0,
-  carboidratosRef: 14.6,
-  gorduraRef: 0,
-  fibrasRef: 1.2,
-  valoresReais: {
-    calorias: 0,
-    proteina: 0,
-    carboidratos: 0,
-    gordura: 0,
-    fibras: 0,
+  macros: {
+    calorias: {ref: 60, real: 0},
+    proteina: {ref: 0, real: 0},
+    carboidratos: {ref: 14.6, real: 0},
+    gordura: {ref: 0, real: 0},
+    fibras: {ref: 1.2, real: 0},
+  },
+  vitaminas: {
+    A: { ref: 700, real: 0 },
+    B1: { ref: 0.03, real: 0 },
+    B2: { ref: 0.03, real: 0 },
+    B3: { ref: 0.53, real: 0 },
+    B5: { ref: 0.26, real: 0 },
+    B6: { ref: 0.08, real: 0 },
+    B7: { ref: 0.0, real: 0 },
+    B9: { ref: 0.00, real: 0 },
+    B12: { ref: 0.00, real: 0 },
+    C: { ref: 14.0, real: 0 },
+    D: { ref: 0.0, real: 0 },
+    E: { ref: 0.88, real: 0 },
+    K: { ref: 0.0, real: 0 }
+  },
+  minerais: {
+    Cálcio: { ref: 18, real: 0 },
+    Ferro: { ref: 0.60, real: 0 },
+    Magnésio: { ref: 21, real: 0 },
+    Fósforo: { ref: 33, real: 0 },
+    Potássio: { ref: 237, real: 0 },
+    Sódio: { ref: 8, real: 0 },
+    Zinco: { ref: 0.5, real: 0 }
   }
+  
 };
 
   export const queijoRicotta = {
     nome: 'Queijo Ricotta Fresco',
     quantidade: 230,
-    caloriasRef: 167,
-    proteinaRef: 15,
-    carboidratosRef: 0,
-    gorduraRef: 12.0,
-    fibrasRef: 0,
-    valoresReais: {
-      calorias: 0,
-      proteina: 0,
-      carboidratos: 0,
-      gordura: 0,
-      fibras: 0,
-    }
+    macros: {
+      calorias: {ref: 167, real: 0},
+      proteina: {ref: 15, real: 0},
+      carboidratos: {ref: 0, real: 0},
+      gordura: {ref: 12.0, real: 0},
+      fibras: {ref: 0, real: 0},
+    },
+    vitaminas: {
+    A: { ref: 370, real: 0 },
+    B1: { ref: 0.03, real: 0 },
+    B2: { ref: 0.30, real: 0 },
+    B3: { ref: 0.40, real: 0 },
+    B5: { ref: 0.28, real: 0 },
+    B6: { ref: 0.04, real: 0 },
+    B7: { ref: 3.0, real: 0 },
+    B9: { ref: 5.00, real: 0 },
+    B12: { ref: 0.60, real: 0 },
+    C: { ref: 0.0, real: 0 },
+    D: { ref: 0.0, real: 0 },
+    E: { ref: 0.39, real: 0 },
+    K: { ref: 0.0, real: 0 }
+  },
+  minerais: {
+    Cálcio: { ref: 300, real: 0 },
+    Ferro: { ref: 0.27, real: 0 },
+    Magnésio: { ref: 14, real: 0 },
+    Fósforo: { ref: 300, real: 0 },
+    Potássio: { ref: 140, real: 0 },
+    Sódio: { ref: 350, real: 0 },
+    Zinco: { ref: 1.2, real: 0 }
+  }
+    
   };
 
   export const leiteEmPó = {
     nome: 'Leite em pó desnatado',
     quantidade: 20,
-    caloriasRef: 370,
-    proteinaRef: 37.5,
-    carboidratosRef: 55,
-    gorduraRef: 0,
-    fibrasRef: 0,
-    valoresReais: {
-      calorias: 0,
-      proteina: 0,
-      carboidratos: 0,
-      gordura: 0,
-      fibras: 0,
-    }
+    macros: {
+      calorias: {ref: 370, real: 0},
+      proteina: {ref: 37.5, real: 0},
+      carboidratos: {ref: 55, real: 0},
+      gordura: {ref: 0, real: 0},
+      fibras: {ref: 0, real: 0},
+    },
+    vitaminas: {
+    A: { ref: 400, real: 0 },
+    B1: { ref: 0.15, real: 0 },
+    B2: { ref: 1.15, real: 0 },
+    B3: { ref: 0.40, real: 0 },
+    B5: { ref: 0.50, real: 0 },
+    B6: { ref: 0.14, real: 0 },
+    B7: { ref: 0.0, real: 0 },
+    B9: { ref: 1.00, real: 0 },
+    B12: { ref: 1.20, real: 0 },
+    C: { ref: 0.0, real: 0 },
+    D: { ref: 300.0, real: 0 },
+    E: { ref: 0.63, real: 0 },
+    K: { ref: 0.0, real: 0 }
+  },
+  minerais: {
+    Cálcio: { ref: 500, real: 0 },
+    Ferro: { ref: 0.06, real: 0 },
+    Magnésio: { ref: 14, real: 0 },
+    Fósforo: { ref: 800, real: 0 },
+    Potássio: { ref: 491, real: 0 },
+    Sódio: { ref: 180, real: 0 },
+    Zinco: { ref: 1.0, real: 0 }
+  }
+    
   };
 
 
@@ -439,50 +924,110 @@ export const batataDoce = {
   export const ketchup = {
     nome: 'Ketchup',
     quantidade: 40,
-    caloriasRef: 90,
-    proteinaRef: 1.4,
-    carboidratosRef: 20.0,
-    gorduraRef: 0,
-    fibrasRef: 1.0,
-    valoresReais: {
-      calorias: 0,
-      proteina: 0,
-      carboidratos: 0,
-      gordura: 0,
-      fibras: 0,
-    }
+    macros: {
+      calorias: {ref: 90, real: 0},
+      proteina: {ref: 1.4, real: 0},
+      carboidratos: {ref: 20.0, real: 0},
+      gordura: {ref: 0, real: 0},
+      fibras: {ref: 1.0, real: 0},
+    },
+    vitaminas: {
+    A: { ref: 10, real: 0 },
+    B1: { ref: 0.01, real: 0 },
+    B2: { ref: 0.02, real: 0 },
+    B3: { ref: 0.10, real: 0 },
+    B5: { ref: 0.10, real: 0 },
+    B6: { ref: 0.05, real: 0 },
+    B7: { ref: 0.0, real: 0 },
+    B9: { ref: 0.00, real: 0 },
+    B12: { ref: 0.00, real: 0 },
+    C: { ref: 1.0, real: 0 },
+    D: { ref: 0.0, real: 0 },
+    E: { ref: 0.04, real: 0 },
+    K: { ref: 1.0, real: 0 }
+  },
+  minerais: {
+    Cálcio: { ref: 2, real: 0 },
+    Ferro: { ref: 0.27, real: 0 },
+    Magnésio: { ref: 9, real: 0 },
+    Fósforo: { ref: 26, real: 0 },
+    Potássio: { ref: 183, real: 0 },
+    Sódio: { ref: 900, real: 0 },
+    Zinco: { ref: 0.20, real: 0 }
+  }
+    
   };
 
   export const mostarda = {
     nome: 'Mostarda',
     quantidade: 20,
-    caloriasRef: 70,
-    proteinaRef: 2.8,
-    carboidratosRef: 6.8,
-    gorduraRef: 2.9,
-    fibrasRef: 2.0,
-    valoresReais: {
-      calorias: 0,
-      proteina: 0,
-      carboidratos: 0,
-      gordura: 0,
-      fibras: 0,
-    }
+    macros: {
+      calorias: {ref: 70, real: 0},
+      proteina: {ref: 2.8, real: 0},
+      carboidratos: {ref: 6.8, real: 0},
+      gordura: {ref: 2.9, real: 0},
+      fibras: {ref: 2.0, real: 0},
+    },
+    vitaminas: {
+    A: { ref: 16, real: 0 },
+    B1: { ref: 0.21, real: 0 },
+    B2: { ref: 0.03, real: 0 },
+    B3: { ref: 0.30, real: 0 },
+    B5: { ref: 0.24, real: 0 },
+    B6: { ref: 0.10, real: 0 },
+    B7: { ref: 0.0, real: 0 },
+    B9: { ref: 0.00, real: 0 },
+    B12: { ref: 0.00, real: 0 },
+    C: { ref: 0.0, real: 0 },
+    D: { ref: 0.0, real: 0 },
+    E: { ref: 0.00, real: 0 },
+    K: { ref: 0.0, real: 0 }
+  },
+  minerais: {
+    Cálcio: { ref: 6, real: 0 },
+    Ferro: { ref: 0.41, real: 0 },
+    Magnésio: { ref: 24, real: 0 },
+    Fósforo: { ref: 28, real: 0 },
+    Potássio: { ref: 19, real: 0 },
+    Sódio: { ref: 329, real: 0 },
+    Zinco: { ref: 0.40, real: 0 }
+  }
+    
   };
 
   export const agua = {
     nome: 'Agua',
     quantidade: 200,
-    caloriasRef: 0,
-    proteinaRef: 0,
-    carboidratosRef: 0,
-    gorduraRef: 0,
-    fibrasRef: 0,
-    valoresReais: {
-      calorias: 0,
-      proteina: 0,
-      carboidratos: 0,
-      gordura: 0,
-      fibras: 0,
-    }
+    macros: {
+      calorias: {ref: 0, real: 0},
+      proteina: {ref: 0, real: 0},
+      carboidratos: {ref: 0, real: 0},
+      gordura: {ref: 0, real: 0},
+      fibras: {ref: 0, real: 0},
+    },
+    vitaminas: {
+    A: { ref: 0, real: 0 },
+    B1: { ref: 0.00, real: 0 },
+    B2: { ref: 0.00, real: 0 },
+    B3: { ref: 0.00, real: 0 },
+    B5: { ref: 0.00, real: 0 },
+    B6: { ref: 0.00, real: 0 },
+    B7: { ref: 0.0, real: 0 },
+    B9: { ref: 0.00, real: 0 },
+    B12: { ref: 0.00, real: 0 },
+    C: { ref: 0.0, real: 0 },
+    D: { ref: 0.0, real: 0 },
+    E: { ref: 0.00, real: 0 },
+    K: { ref: 0.0, real: 0 }
+  },
+  minerais: {
+    Cálcio: { ref: 0, real: 0 },
+    Ferro: { ref: 0.00, real: 0 },
+    Magnésio: { ref: 0, real: 0 },
+    Fósforo: { ref: 0, real: 0 },
+    Potássio: { ref: 0, real: 0 },
+    Sódio: { ref: 0, real: 0 },
+    Zinco: { ref: 0.00, real: 0 }
+  }
+    
   };
